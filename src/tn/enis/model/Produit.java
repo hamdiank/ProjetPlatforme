@@ -20,7 +20,7 @@ public class Produit {
 	private String description;
 	private Double prix;
 	private int quantiteStock;
-	@ManyToOne
+	@ManyToOne  
 	private Categoris categorie;
 
 	public Produit() {
