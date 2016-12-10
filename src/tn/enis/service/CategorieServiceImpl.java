@@ -1,6 +1,7 @@
 package tn.enis.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import tn.enis.dao.CategorieDaoImpl;
 import tn.enis.model.Categoris;
@@ -41,8 +42,8 @@ public class CategorieServiceImpl implements CategorieService {
 
 	@Override
 	public ArrayList<Categoris> listeCategorie() {
+		return  (ArrayList<Categoris>) categorie.findAll(Categoris.class);
 		
-		return null;
 	}
 
 }

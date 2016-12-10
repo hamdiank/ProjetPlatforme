@@ -2,32 +2,61 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:b ="http://bootsfaces.net/ui"
+	>
 <h:head>
 
 </h:head>
 <h:body>
+<b:navBar brand="OurProject" brandHref="http://localhost:8080/ProjetPlatforme/Welcome">
+    <b:navbarLinks>
+        <b:navLink value="OurProject" href=""></b:navLink>
+        <b:navLink value="Link" href="#"></b:navLink>
+        <b:navLink value="Link" href="#"></b:navLink>
+    </b:navbarLinks>
+</b:navBar>
+<br/>
 
-	<div>
 
-		<h:form>
-			<legend>Inscription</legend>
-
-			<h:panelGrid columns="2">
-				<h:outputLabel>Nom </h:outputLabel>
-				<h:inputText id="nom" value="#{CategorieManager.Cat.nom}"></h:inputText>
-				<h:outputLabel> description  </h:outputLabel>
-				<h:inputText id="description"
-					value="#{CategorieManager.Cat.description}"></h:inputText>
-
-				<h:outputLabel> prix  </h:outputLabel>
-				<h:inputText id="prix" value="#{CategorieManager.Cat.prix}"></h:inputText>
-				<h:commandButton action="#{ajouter}" value="Ajouter"></h:commandButton>
-			</h:panelGrid>
-
-		</h:form>
+<div class="row">
+<div class="col-lg-2"></div>
+	<div class="col-lg-8">
+	<b:panel title="Ajouter une Catégorie " look="primary" collapsible="false">
+		<b:form >
+		<b:well>
+		<b:row>
+		<b:label text="Nom de la  Categorie : "/>
+		<b:inputText value="#{categorieManager.categorie.nom }" required="true" placeholder="name of categorie"/>
+		<b:label text="Description  : "/>
+		<b:inputText value="#{categorieManager.categorie.description}" required="true" placeholder="Description of the categorie"/>
+		<b:commandButton value="Ajouter Categorie "   action="#{categorieManager.addCategorie }"  look="success"/>
+		
+		
+		</b:row>	
+		</b:well>
+		</b:form>
+		</b:panel>
 	</div>
-
+	<div class="col-lg-3"></div>
+	</div>
+	<br/>
+	<div class="row">
+	<div class="col-lg-2"></div>
+	<div class="col-lg-8">
+	<b:panel title="Liste Des Categories : " id="table" look="primary" collapsible="false">
+	<b:dataTable value="#{categorieManager.listcategorie}" var="cat">
+	
+	<b:dataTableColumn value="#{cat.codeCategorie}"/>
+	<b:dataTableColumn value="#{cat.nom}"/>
+	<b:dataTableColumn value="#{cat.description}"/>
+	<b:dataTableColumn value="#{cat.dateAjout}"/>
+	</b:dataTable>
+	</b:panel>
+	</div>
+	</div>
+	
+	<div class="col-lg-2"></div>
 
 </h:body>
 </html>

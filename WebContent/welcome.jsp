@@ -26,8 +26,8 @@
 						Produit</button>
 				</div>
 				<div class="col-sm-4">
-					<button type="button" class="btn btn-success btn-block">Ajouter
-						Categorie</button>
+					<a href="http://localhost:8080/ProjetPlatforme/faces/pages/catego.xhtml"><button type="button" class="btn btn-success btn-block">Ajouter
+						Categorie</button></a>
 				</div>
 				<div class="col-sm-4">
 					<button type="button" class="btn btn-danger btn-block">Ajouter
