@@ -41,7 +41,7 @@ public class CategorieServiceImpl implements CategorieService {
 
 	@Override
 	public ArrayList<Categoris> listeCategorie() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

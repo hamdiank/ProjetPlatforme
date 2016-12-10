@@ -1,11 +1,13 @@
-package tn.enis.controller;
+package tn.enis.managerBean;
 
 import javax.annotation.ManagedBean;
+import javax.enterprise.context.RequestScoped;
 
 import tn.enis.model.Categoris;
 import tn.enis.service.CategorieServiceImpl;
 
 @ManagedBean(value="categorieManager")
+@RequestScoped
 public class CategorieManager {
 
 	Categoris cat;
@@ -14,7 +16,7 @@ public class CategorieManager {
 	public CategorieManager() {
 		super();
 		cat = new Categoris();
-	//	catServic = new CategorieServiceImpl();
+		// catServic = new CategorieServiceImpl();
 	}
 
 	
