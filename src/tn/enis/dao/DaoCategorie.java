@@ -6,4 +6,5 @@ import tn.enis.model.Categoris;
 
 public interface DaoCategorie extends DaoGenerique <Categoris,BigDecimal>{
 
+	
 }

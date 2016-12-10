@@ -3,6 +3,7 @@ package tn.enis.dao;
 import java.io.Serializable;
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -43,17 +44,23 @@ public class DaoGenHibernateIml <E, PK extends Serializable> implements DaoGener
 				
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
-	public E find(PK key) {
-		// TODO Auto-generated method stub
-		return null;
+	public E findByID(Class clazz, Integer id) {
+		Session hibernateSession = this.getSession();
+		E t = null;
+		t = (E) hibernateSession.get(clazz, id);
+		return t;
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
-	public List<E> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<E> findAll(Class clazz) {
+		Session hibernateSession = this.getSession();
+		List<E> T = null;
+		Query query = hibernateSession.createQuery("from " + clazz.getName());
+		T = (List<E>) query.list();
+		return T;
 	}
-	
 
 }

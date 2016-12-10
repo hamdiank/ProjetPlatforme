@@ -11,8 +11,10 @@ public interface DaoGenerique<E, PK extends Serializable> {
 
 	public void remove(E entity);
 
-	public E find(PK key);
-
-	public List<E> getAll();
+	@SuppressWarnings("rawtypes")
+	public E findByID(Class clazz, Integer id);
+	
+    @SuppressWarnings("rawtypes")
+	public List<E> findAll(Class clazz);
 
 }
