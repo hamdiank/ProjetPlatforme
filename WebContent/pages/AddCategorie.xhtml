@@ -4,20 +4,35 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:b ="http://bootsfaces.net/ui"
-	>
+	 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
 <h:head>
 
 </h:head>
 <h:body>
 <b:navBar brand="OurProject" brandHref="http://localhost:8080/ProjetPlatforme/Welcome">
     <b:navbarLinks>
-        <b:navLink value="OurProject" href=""></b:navLink>
-        <b:navLink value="Link" href="#"></b:navLink>
-        <b:navLink value="Link" href="#"></b:navLink>
+        <b:navLink value="Gestion Client" href="#"></b:navLink>
+        <b:navLink value="Gestion Categorie" active="true" href="http://localhost:8080/ProjetPlatforme/faces/pages/GestionCategorie.xhtml"></b:navLink>
+    	<b:navLink value="Gestion Produit" href="#"></b:navLink>
     </b:navbarLinks>
 </b:navBar>
-<br/>
 
+
+
+
+<b:column span="3">
+     <b:panel look="primary" title="Gestion Categorie" collapsible="false">
+         <b:listLinks>
+             <b:navLink active="true" href="http://localhost:8080/ProjetPlatforme/faces/pages/AddCategorie.xhtml" value="Ajouter Categorie"
+                        icon="plus" iconAlign="right"/>
+             <b:navLink></b:navLink>
+             <b:navLink href="http://localhost:8080/ProjetPlatforme/faces/pages/ListCategorie.xhtml" value="List Categorie" icon="link"></b:navLink>
+             <b:navLink></b:navLink>
+         </b:listLinks>
+      </b:panel>
+ </b:column>
+ 
 
 <div class="row">
 <div class="col-lg-2"></div>
@@ -30,9 +45,7 @@
 		<b:inputText value="#{categorieManager.categorie.nom }" required="true" placeholder="name of categorie"/>
 		<b:label text="Description  : "/>
 		<b:inputText value="#{categorieManager.categorie.description}" required="true" placeholder="Description of the categorie"/>
-		<b:commandButton value="Ajouter Categorie "   action="#{categorieManager.addCategorie }"  look="success"/>
-		
-		
+		<b:commandButton value="Ajouter Categorie "    action="#{categorieManager.addCategorie }"  look="success"/>
 		</b:row>	
 		</b:well>
 		</b:form>
@@ -41,22 +54,6 @@
 	<div class="col-lg-3"></div>
 	</div>
 	<br/>
-	<div class="row">
-	<div class="col-lg-2"></div>
-	<div class="col-lg-8">
-	<b:panel title="Liste Des Categories : " id="table" look="primary" collapsible="false">
-	<b:dataTable value="#{categorieManager.listcategorie}" var="cat">
 	
-	<b:dataTableColumn value="#{cat.codeCategorie}"/>
-	<b:dataTableColumn value="#{cat.nom}"/>
-	<b:dataTableColumn value="#{cat.description}"/>
-	<b:dataTableColumn value="#{cat.dateAjout}"/>
-	</b:dataTable>
-	</b:panel>
-	</div>
-	</div>
-	
-	<div class="col-lg-2"></div>
-
 </h:body>
 </html>

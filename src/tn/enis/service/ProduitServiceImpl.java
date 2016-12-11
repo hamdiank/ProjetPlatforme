@@ -39,8 +39,8 @@ public class ProduitServiceImpl implements ProduitService {
 
 	@Override
 	public ArrayList<Produit> listeProduit() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return (ArrayList<Produit>)prods.findAll(Produit.class);
 	}
 
 }

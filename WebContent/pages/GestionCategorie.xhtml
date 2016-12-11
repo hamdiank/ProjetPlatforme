@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:b ="http://bootsfaces.net/ui"
+	 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	>
+
+<h:head></h:head> 
+<h:body>
+<b:navBar brand="OurProject" brandHref="http://localhost:8080/ProjetPlatforme/Welcome">
+    <b:navbarLinks>
+        <b:navLink value="OurProject" href=""></b:navLink>
+        <b:navLink value="Gestion Client" href="#"></b:navLink>
+        <b:navLink value="Gestion Categorie" href="http://localhost:8080/ProjetPlatforme/faces/pages/GestionCategorie.xhtml"></b:navLink>
+    	<b:navLink value="Gestion Produit" href="#"></b:navLink>
+    </b:navbarLinks>
+</b:navBar>
+
+
+
+<b:column span="3">
+     <b:panel look="primary" title="Gestion Categorie" collapsible="false">
+         <b:listLinks>
+             <b:navLink href="http://localhost:8080/ProjetPlatforme/faces/pages/AddCategorie.xhtml" value="Ajouter Categorie"
+                        icon="plus" iconAlign="right"/>
+             <b:navLink></b:navLink>
+             <b:navLink href="http://localhost:8080/ProjetPlatforme/faces/pages/ListCategorie.xhtml" value="List Categorie" icon="link"></b:navLink>
+             <b:navLink></b:navLink>
+         </b:listLinks>
+      </b:panel>
+ </b:column>
+ 
+ 
+
+
+
+
+
+
+
+
+</h:body>
+</html>

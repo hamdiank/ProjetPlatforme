@@ -18,7 +18,7 @@ public class Categoris {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	@Column(name = "id_categorie", nullable = false, unique = true)
-	private Long codeCategorie;
+	private Integer codeCategorie;
 	private String nom;
 	private String description;
 	private Date dateAjout;
@@ -37,11 +37,11 @@ public class Categoris {
 		this.dateAjout = dateAjout;
 	}
 
-	public Long getCodeCategorie() {
+	public Integer getCodeCategorie() {
 		return codeCategorie;
 	}
 
-	public void setCodeCategorie(Long codeCategorie) {
+	public void setCodeCategorie(Integer codeCategorie) {
 		this.codeCategorie = codeCategorie;
 	}
 

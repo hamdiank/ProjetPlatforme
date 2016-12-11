@@ -34,7 +34,10 @@ public class CategorieManager implements Serializable{
 		Date date  =new Date(System.currentTimeMillis()) ;
 		categorie.setDateAjout(date);
 		catServic.ajouter(categorie);
-		setListcategorie(catServic.listeCategorie()) ; 
+	}
+	
+	public void delete(Categoris cat){
+		catServic.supprimer(cat) ;
 	}
 	
 

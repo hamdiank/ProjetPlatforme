@@ -1,7 +1,6 @@
 package tn.enis.service;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import tn.enis.dao.CategorieDaoImpl;
 import tn.enis.model.Categoris;
@@ -36,8 +35,8 @@ public class CategorieServiceImpl implements CategorieService {
 
 	@Override
 	public Categoris retourner(Integer key) {
-		// TODO Auto-generated method stub
-		return null;
+		Categoris c = categorie.findByID(Categoris.class,key ) ; 
+		return c;
 	}
 
 	@Override
