@@ -13,7 +13,7 @@
         
         <b:navLink active="true" value="Gestion Client" href="GestionClient.xhtml"></b:navLink>
         <b:navLink value="Gestion Categorie" href="GestionCategorie.xhtml"></b:navLink>
-    	<b:navLink value="Gestion Produit" href="#"></b:navLink>
+    	<b:navLink value="Gestion Produit" href="GestionProduit.xhtml"></b:navLink>
     </b:navbarLinks>
 </b:navBar>
 
@@ -39,13 +39,25 @@
 		<b:well>
 		<b:row>
 		<b:label text="Nom du Client : "/>
-		<b:inputText value="#{clientManager.client.nom_client }" required="true" placeholder="nom du client"/>
+		<b:inputText id="comclient" value="#{clientManager.client.nom_client }" required="true" placeholder="nom du client">
+		<f:validator validatorId="ctaegoriValidate"/>
+		</b:inputText>
+		<b:message for="comclient" only-most-severe="true"/>
 		<b:label text="Prenom du Client : "/>
-		<b:inputText value="#{clientManager.client.prenom_client }" required="true" placeholder="prennom du client"/>
+		<b:inputText id="prenomclient" value="#{clientManager.client.prenom_client }" required="true" placeholder="prennom du client">
+		<f:validator validatorId="ctaegoriValidate"/>
+		</b:inputText>
+		<b:message for="prenomclient" only-most-severe="true"/>
 		<b:label text="CIN : "/>
-		<b:inputText value="#{clientManager.client.cin }" required="true" placeholder="CIN"/>
+		<b:inputText id="cinclient" value="#{clientManager.client.cin }" required="true" placeholder="CIN">
+		<f:validator validatorId="cinValidator"/>
+		</b:inputText>
+		<b:message for="cinclient" only-most-severe="true" />
 		<b:label text="Adresse  : "/>
-		<b:inputText value="#{clientManager.client.adresse}" required="true" placeholder="adresse"/>
+		<b:inputText id="clientadress" value="#{clientManager.client.adresse}" required="true" placeholder="adresse">
+		<f:validator validatorId="ctaegoriValidate"/>
+		</b:inputText>
+		<b:message for="clientadress" only-most-severe="true"/>
 		<b:commandButton value="Ajouter Client "    action="#{clientManager.addclient }"  look="success"/>
 		</b:row>	
 		</b:well>

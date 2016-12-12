@@ -42,13 +42,25 @@
 		<f:selectItems value="#{produitManager.categoriemanager.listcategorie}" var="c" itemValue="#{c}" itemLabel="#{c.nom}"/>
 		</b:selectOneMenu>
 		<b:label text="Nom Du Produit : "/>
-		<b:inputText value="#{produitManager.produit.nom }" required="true" placeholder="nom du produit"/>
+		<b:inputText id="nomproduit" value="#{produitManager.produit.nom }" required="true" placeholder="nom du produit">
+		<f:validator validatorId="ctaegoriValidate"/>
+		</b:inputText>
+		<b:message for="nomproduit" only-most-severe="true" />
 		<b:label text="Description  : "/>
-		<b:inputText value="#{produitManager.produit.description}" required="true" placeholder="Description du produit"/>
+		<b:inputText id="descriptprod" value="#{produitManager.produit.description}" required="true" placeholder="Description du produit">
+		<f:validator validatorId="ctaegoriValidate"/>
+		</b:inputText>
+		<b:message for="descriptprod" only-most-severe="true" />
 		<b:label text="Prix Du Produit : "/>
-		<b:inputText value="#{produitManager.produit.prix }" required="true" placeholder="prix du produit"/>
+		<b:inputText id="prixprod" value="#{produitManager.produit.prix }" required="true" placeholder="prix du produit">
+		<f:validator validatorId="ctaegoriValidate"/>
+		</b:inputText>
+		<b:message for="prixprod" only-most-severe="true" />
 		<b:label text="Qauntite en Stock : "/>
-		<b:inputText value="#{produitManager.produit.quantiteStock }" required="true" placeholder="quantite en stock "/>
+		<b:inputText id="qtstock" value="#{produitManager.produit.quantiteStock }" required="true" placeholder="quantite en stock ">
+		<f:validator validatorId="prodValidate"/>
+		</b:inputText>
+		<b:message for="qtstock" only-most-severe="true" />
 		<b:commandButton value="Ajouter Produit "    action="#{produitManager.addProduit}"  look="success"/>
 		</b:row>	
 		</b:well>

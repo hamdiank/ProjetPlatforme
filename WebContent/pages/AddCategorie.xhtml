@@ -3,57 +3,65 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:b ="http://bootsfaces.net/ui"
-	 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
->
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 <h:head>
 
 </h:head>
 <h:body>
-<b:navBar brand="OurProject" brandHref="http://localhost:8080/ProjetPlatforme/Welcome">
-    <b:navbarLinks>
-        <b:navLink value="Gestion Client" href="GestionClient.xhtml"></b:navLink>
-        <b:navLink value="Gestion Categorie" active="true" href="GestionCategorie.xhtml"></b:navLink>
-    	<b:navLink value="Gestion Produit" href="GestionProduit.xhtml"></b:navLink>
-    </b:navbarLinks>
-</b:navBar>
+	<b:navBar brand="OurProject"
+		brandHref="http://localhost:8080/ProjetPlatforme/Welcome">
+		<b:navbarLinks>
+			<b:navLink value="Gestion Client" href="GestionClient.xhtml"></b:navLink>
+			<b:navLink value="Gestion Categorie" active="true"
+				href="GestionCategorie.xhtml"></b:navLink>
+			<b:navLink value="Gestion Produit" href="GestionProduit.xhtml"></b:navLink>
+		</b:navbarLinks>
+	</b:navBar>
 
-
-
-
-<b:column span="3">
-     <b:panel look="primary" title="Gestion Categorie" collapsible="false">
-         <b:listLinks>
-             <b:navLink active="true" href="AddCategorie.xhtml" value="Ajouter Categorie"
-                        icon="plus" iconAlign="right"/>
-             <b:navLink></b:navLink>
-             <b:navLink href="ListCategorie.xhtml" value="List Categorie" icon="link"></b:navLink>
-             <b:navLink></b:navLink>
-         </b:listLinks>
-      </b:panel>
- </b:column>
- 
-
-<div class="row">
-<div class="col-lg-2"></div>
-	<div class="col-lg-8">
-	<b:panel title="Ajouter une Catégorie " look="primary" collapsible="false">
-		<b:form >
-		<b:well>
-		<b:row>
-		<b:label text="Nom de la  Categorie : "/>
-		<b:inputText value="#{categorieManager.categorie.nom }" required="true" placeholder="name of categorie"/>
-		<b:label text="Description  : "/>
-		<b:inputText value="#{categorieManager.categorie.description}" required="true" placeholder="Description of the categorie"/>
-		<b:commandButton value="Ajouter Categorie "    action="#{categorieManager.addCategorie }"  look="success"/>
-		</b:row>	
-		</b:well>
-		</b:form>
+	<b:column span="3">
+		<b:panel look="primary" title="Gestion Categorie" collapsible="false">
+			<b:listLinks>
+				<b:navLink active="true" href="AddCategorie.xhtml"
+					value="Ajouter Categorie" icon="plus" iconAlign="right" />
+				<b:navLink></b:navLink>
+				<b:navLink href="ListCategorie.xhtml" value="List Categorie"
+					icon="link"></b:navLink>
+				<b:navLink></b:navLink>
+			</b:listLinks>
 		</b:panel>
+	</b:column>
+
+	<div class="row">
+		<div class="col-lg-2"></div>
+		<div class="col-lg-8">
+			<b:panel title="Ajouter une Catégorie " look="primary"
+				collapsible="false">
+				<b:form>
+					<b:well>
+						<b:row>
+							<b:label text="Nom de la  Categorie : " />
+							<b:inputText id="nomcat" value="#{categorieManager.categorie.nom }"
+								required="true" placeholder="name of categorie" >
+								<f:validator validatorId="ctaegoriValidate"/>
+								</b:inputText>
+								<b:message for="nomcat" only-most-severe="true" />
+							<b:label text="Description  : " />
+							<b:inputText value="#{categorieManager.categorie.description}"
+								required="true" placeholder="Description of the categorie" >
+								<f:validator validatorId="ctaegoriValidate"/>
+								</b:inputText>
+								<b:message for="nomcat" only-most-severe="true" />
+							<b:commandButton value="Ajouter Categorie "
+								action="#{categorieManager.addCategorie }" look="success" />
+						</b:row>
+					</b:well>
+				</b:form>
+			</b:panel>
+		</div>
+		<div class="col-lg-3"></div>
 	</div>
-	<div class="col-lg-3"></div>
-	</div>
-	<br/>
-	
+	<br />
+
 </h:body>
 </html>
