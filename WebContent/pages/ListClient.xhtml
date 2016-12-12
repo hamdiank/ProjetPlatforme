@@ -34,16 +34,19 @@
 	<div class="col-lg-2"></div>
 	<div class="col-lg-8">
 	<b:panel title="Liste Des Clients : "  look="primary" collapsible="false">
-	
+	<h:form>
 	<b:dataTable value="#{clientManager.listclient}" var="cat"  >
 	<b:dataTableColumn label="CIN" value="#{cat.cin}"/>
 	<b:dataTableColumn label="Nom Client" value="#{cat.nom_client}"/>
 	<b:dataTableColumn label="Prenom client" value="#{cat.prenom_client}"/>
 	<b:dataTableColumn label="Adresse" value="#{cat.adresse}"/>
 	<b:dataTableColumn label="Supprimer"  >
+	<h:commandLink action="ListClient" actionListener="#{clientManager.deletClient}"  >Supprimer
+	 <f:param value="#{cat.id_client}" name="clientsup"></f:param>
+	</h:commandLink>
 	</b:dataTableColumn>
 	</b:dataTable>
-	
+	</h:form>
 	</b:panel>
 	</div>
 	</div>

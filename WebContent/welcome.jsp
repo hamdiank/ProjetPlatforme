@@ -20,19 +20,22 @@
 		</div>
 
 		<div class="panel-body">
+		
 			<div class="row">
-				<div class="col-sm-4">
-					<button type="button" class="btn btn-primary btn-block">Gestion Du
-						Produit</button>
+			<div class="col-sm-4">
+				<a href="http://localhost:8080/ProjetPlatforme/faces/pages/GestionClient.xhtml">	<button type="button" class="btn btn-danger btn-block">Gestion Du 
+						Client</button></a>
 				</div>
 				<div class="col-sm-4">
 					<a href="http://localhost:8080/ProjetPlatforme/faces/pages/GestionCategorie.xhtml"><button type="button" class="btn btn-success btn-block">Gestion du
 						Categorie</button></a>
 				</div>
 				<div class="col-sm-4">
-					<button type="button" class="btn btn-danger btn-block">Gestion Du 
-						Client</button>
+				 <a href="http://localhost:8080/ProjetPlatforme/faces/pages/GestionProduit.xhtml">	<button type="button" class="btn btn-primary btn-block">Gestion Du
+						Produit</button></a>
 				</div>
+				
+				
 			</div>
 		</div>
 	</div>

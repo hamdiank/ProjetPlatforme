@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
 
 import tn.enis.model.Produit;
 import tn.enis.service.ProduitServiceImpl;
@@ -30,12 +32,16 @@ public class ProduitManager implements Serializable {
 		setCategoriemanager(new CategorieManager()) ;
 	}
 
-	public void addProduit(Produit p) {
-		produitserv.ajouter(p);
+	public void addProduit() {
+		produitserv.ajouter(produit);
 	}
 
-	public void deletProduit(Produit p) {
-		produitserv.supprimer(p);
+	public void deletProduit() {
+		FacesContext fc = FacesContext.getCurrentInstance() ; 
+		HttpServletRequest  request = (HttpServletRequest) fc.getExternalContext().getRequest() ; 
+		 int idcat = Integer.parseInt(request.getParameter("produitsup"))  ;
+		produit.setCodeProduit(idcat);
+		produitserv.supprimer(produit);
 	}
 
 	public void updateProd(Produit p) {

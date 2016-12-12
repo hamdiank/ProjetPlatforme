@@ -20,6 +20,7 @@ public class Categoris {
 	@Column(name = "id_categorie", nullable = false, unique = true)
 	private Integer codeCategorie;
 	private String nom;
+	private boolean editable ; 
 	private String description;
 	private Date dateAjout;
 	@OneToMany
@@ -75,6 +76,14 @@ public class Categoris {
 
 	public void setProduits(List<Produit> produits) {
 		this.produits = produits;
+	}
+
+	public boolean isEditable() {
+		return editable;
+	}
+
+	public void setEditable(boolean editable) {
+		this.editable = editable;
 	}
 
 	

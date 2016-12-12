@@ -12,6 +12,9 @@ public class Client {
 	@Id
 	 @GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private long id_client ; 
+	public void setId_client(long id_client) {
+		this.id_client = id_client;
+	}
 	private String nom_client ; 
 	private String prenom_client ; 
 	private long cin ; 

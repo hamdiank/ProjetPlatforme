@@ -36,18 +36,21 @@
 	<div class="col-lg-2"></div>
 	<div class="col-lg-8">
 	<b:panel title="Liste Des Produits : "  look="primary" collapsible="false">
-	
+	<h:form>
 	<b:dataTable value="#{produitManager.listproduit}" var="cat"  >
 	<b:dataTableColumn label="Code Produit" value="#{cat.codeProduit}"/>
-	<b:dataTableColumn label="Categorie " value="#{cat.categorie}"/>
+	<b:dataTableColumn label="Categorie " value="#{cat.categorie.nom}"/>
 	<b:dataTableColumn label="Nom " value="#{cat.nom}"/>
 	<b:dataTableColumn label="Description" value="#{cat.description}"/>
 	<b:dataTableColumn label="Prix" value="#{cat.prix}"/>
 	<b:dataTableColumn label="Quantite en Stock" value="#{cat.quantiteStock}"/>
 	<b:dataTableColumn label="Supprimer"  >
+	<h:commandLink action="ListProduit" actionListener="#{produitManager.deletProduit}"  >Supprimer
+	 <f:param value="#{cat.codeProduit}" name="produitsup"></f:param>
+	</h:commandLink>
 	</b:dataTableColumn>
 	</b:dataTable>
-	
+	</h:form>
 	</b:panel>
 	</div>
 	</div>

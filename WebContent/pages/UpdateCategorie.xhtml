@@ -32,38 +32,40 @@
       </b:panel>
  </b:column>
  
-
-
-
-
-    <div class="row">
-	<div class="col-lg-2"></div>
-	<div class="col-lg-8">
-	<b:panel title="Liste Des Categories : "  look="primary" collapsible="false">
-	<h:form>
-	<b:dataTable value="#{categorieManager.listcategorie}" var="cat"  >
-	<b:dataTableColumn label="code Categorie" value="#{cat.codeCategorie}"/>
-	<b:dataTableColumn label="nom Categorie" value="#{cat.nom}"/>
-	<b:dataTableColumn label="Description" value="#{cat.description}"/>
-	<b:dataTableColumn label="Date D'ajout" value="#{cat.dateAjout}"/>
-	<b:dataTableColumn label="Modifier "> 
-	 <h:commandLink action="UpdateCategorie" actionListener="#{categorieManager.updatecategorie}">
-	  Modifier
-	  <f:param value="#{cat.codeCategorie}" name="categorieupd" ></f:param>
-	 </h:commandLink>
-	</b:dataTableColumn>
-	<b:dataTableColumn label="Supprimer"   >
-	 <h:commandLink action="ListCategorie" actionListener="#{categorieManager.delete}"  >Supprimer
-	 <f:param value="#{cat.codeCategorie}" name="categoriesup"></f:param>
-	</h:commandLink>
-	</b:dataTableColumn>
-	</b:dataTable>
-	</h:form>
-	</b:panel>
+ <div class="row">
+		<div class="col-lg-2"></div>
+		<div class="col-lg-8">
+			<b:panel title="Mise A jour Catégorie " look="primary"
+				collapsible="false">
+				<b:form>
+					<b:well>
+						<b:row>
+						<h:inputHidden  value="#{categorieManager.categorie.codeCategorie }"></h:inputHidden> 
+							<b:label text="Nom de la  Categorie : " />
+							<h:inputText id="nomcat"  value="#{categorieManager.categorie.nom }"
+								required="true"  >
+								<f:validator validatorId="ctaegoriValidate"/>
+								</h:inputText>
+								<b:message for="nomcat" only-most-severe="true" />
+							<b:label text="Description  : " />
+							<h:inputText  value="#{categorieManager.categorie.description}"
+								required="true"  >
+								<f:validator validatorId="ctaegoriValidate"/>
+								</h:inputText>
+								<b:message for="nomcat" only-most-severe="true" />
+							<b:commandButton value="Enregistrer Les Modifications "
+							action="ListCategorie"
+								action-listener="#{categorieManager.updatecatebase }" look="success" />
+						</b:row>
+					</b:well>
+				</b:form>
+			</b:panel>
+		</div>
+		<div class="col-lg-3"></div>
 	</div>
-	</div>
-	
-	<div class="col-lg-2"></div>
-    
+	<br />
+ 
+ 
+ 
 </h:body> 
 </html>

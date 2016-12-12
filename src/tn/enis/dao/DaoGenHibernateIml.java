@@ -23,6 +23,7 @@ public class DaoGenHibernateIml <E, PK extends Serializable> implements DaoGener
 		Transaction transaction = hibernateSession.beginTransaction();
 		hibernateSession.save(entity);
 		transaction.commit();
+		hibernateSession.close();
 				
 	}
 
@@ -32,7 +33,7 @@ public class DaoGenHibernateIml <E, PK extends Serializable> implements DaoGener
 		Transaction transaction = hibernateSession.beginTransaction();
 		hibernateSession.update(entity);
 		transaction.commit();
-				
+		hibernateSession.close();
 	}
 
 	@Override
@@ -41,6 +42,7 @@ public class DaoGenHibernateIml <E, PK extends Serializable> implements DaoGener
 		Transaction transaction = hibernateSession.beginTransaction();
 		hibernateSession.delete(entity);
 		transaction.commit();
+		hibernateSession.close();
 				
 	}
 
@@ -50,6 +52,7 @@ public class DaoGenHibernateIml <E, PK extends Serializable> implements DaoGener
 		Session hibernateSession = this.getSession();
 		E t = null;
 		t = (E) hibernateSession.get(clazz, id);
+		hibernateSession.close();
 		return t;
 	}
 
@@ -60,6 +63,7 @@ public class DaoGenHibernateIml <E, PK extends Serializable> implements DaoGener
 		List<E> T = null;
 		Query query = hibernateSession.createQuery("from " + clazz.getName());
 		T = (List<E>) query.list();
+		hibernateSession.close();
 		return T;
 	}
 

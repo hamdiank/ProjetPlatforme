@@ -61,7 +61,7 @@
 		<f:validator validatorId="prodValidate"/>
 		</b:inputText>
 		<b:message for="qtstock" only-most-severe="true" />
-		<b:commandButton value="Ajouter Produit "    action="#{produitManager.addProduit}"  look="success"/>
+		<b:commandButton value="Ajouter Produit "    action="ListProduit" actionListener="#{produitManager.addProduit}"  look="success"/>
 		</b:row>	
 		</b:well>
 		</b:form>

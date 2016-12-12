@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
 
 import tn.enis.model.Client;
 import tn.enis.service.ClientServiceImpl;
@@ -32,8 +34,12 @@ public class ClientManager implements Serializable {
 		clientservice.ajouter(client);
 	}
 
-	public void deletClient(Client c) {
-		clientservice.supprimer(c);
+	public void deletClient() {
+		FacesContext fc = FacesContext.getCurrentInstance() ; 
+		HttpServletRequest  request = (HttpServletRequest) fc.getExternalContext().getRequest() ; 
+		 int idcat = Integer.parseInt(request.getParameter("clientsup"));
+		 client.setId_client(idcat);
+		clientservice.supprimer(client);
 	}
 
 	public void updateclient(Client c) {
