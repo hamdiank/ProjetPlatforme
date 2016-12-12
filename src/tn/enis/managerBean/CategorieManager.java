@@ -39,6 +39,9 @@ public class CategorieManager implements Serializable{
 	public void delete(Categoris cat){
 		catServic.supprimer(cat) ;
 	}
+	public void updatecategorie(Categoris c){
+		catServic.modifier(c);
+	}
 	
 
 	public Categoris getCategorie() {

@@ -13,19 +13,19 @@
 
 <b:navBar brand="OurProject" brandHref="http://localhost:8080/ProjetPlatforme/Welcome">
     <b:navbarLinks>
-        <b:navLink value="Gestion Client" href="#"></b:navLink>
-        <b:navLink value="Gestion Categorie" active="true" href="http://localhost:8080/ProjetPlatforme/faces/pages/GestionCategorie.xhtml"></b:navLink>
-    	<b:navLink value="Gestion Produit" href="#"></b:navLink>
+        <b:navLink value="Gestion Client" href="GestionClient.xhtml"></b:navLink>
+        <b:navLink value="Gestion Categorie" active="true" href="GestionCategorie.xhtml"></b:navLink>
+    	<b:navLink value="Gestion Produit" href="GestionProduit.xhtml"></b:navLink>
     </b:navbarLinks>
 </b:navBar>
 
 <b:column span="3">
      <b:panel look="primary" title="Gestion Categorie" collapsible="false">
          <b:listLinks>
-             <b:navLink active="true" href="http://localhost:8080/ProjetPlatforme/faces/pages/AddCategorie.xhtml" value="Ajouter Categorie"
+             <b:navLink active="true" href="AddCategorie.xhtml" value="Ajouter Categorie"
                         icon="plus" iconAlign="right"/>
              <b:navLink></b:navLink>
-             <b:navLink href="http://localhost:8080/ProjetPlatforme/faces/pages/ListCategorie.xhtml" value="List Categorie" icon="link"></b:navLink>
+             <b:navLink href="ListCategorie.xhtml" value="List Categorie" icon="link"></b:navLink>
              <b:navLink></b:navLink>
          </b:listLinks>
       </b:panel>

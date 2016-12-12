@@ -10,9 +10,9 @@ public class ProduitServiceImpl implements ProduitService {
 	ProduitDaoImpl prods;
 	
 
-	public ProduitServiceImpl(ProduitDaoImpl prod) {
+	public ProduitServiceImpl() {
 		super();
-		this.prods = prod;
+		this.prods = new ProduitDaoImpl();
 	}
 
 

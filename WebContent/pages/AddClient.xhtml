@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:b ="http://bootsfaces.net/ui"
+	 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	>
+
+<h:head></h:head> 
+<h:body>
+<b:navBar brand="OurProject" brandHref="http://localhost:8080/ProjetPlatforme/Welcome">
+    <b:navbarLinks>
+        
+        <b:navLink active="true" value="Gestion Client" href="GestionClient.xhtml"></b:navLink>
+        <b:navLink value="Gestion Categorie" href="GestionCategorie.xhtml"></b:navLink>
+    	<b:navLink value="Gestion Produit" href="#"></b:navLink>
+    </b:navbarLinks>
+</b:navBar>
+
+
+
+<b:column span="3">
+     <b:panel look="primary" title="Gestion Client" collapsible="false">
+         <b:listLinks>
+             <b:navLink href="AddClient.xhtml" value="Ajouter Client"
+                        icon="plus" iconAlign="right"/>
+             <b:navLink></b:navLink>
+             <b:navLink href="ListClient.xhtml" value="List CLient" icon="link"></b:navLink>
+             <b:navLink></b:navLink>
+         </b:listLinks>
+      </b:panel>
+ </b:column>
+ 
+ <div class="row">
+<div class="col-lg-2"></div>
+	<div class="col-lg-8">
+	<b:panel title="Ajouter un Client " look="primary" collapsible="false">
+		<b:form >
+		<b:well>
+		<b:row>
+		<b:label text="Nom du Client : "/>
+		<b:inputText value="#{clientManager.client.nom_client }" required="true" placeholder="nom du client"/>
+		<b:label text="Prenom du Client : "/>
+		<b:inputText value="#{clientManager.client.prenom_client }" required="true" placeholder="prennom du client"/>
+		<b:label text="CIN : "/>
+		<b:inputText value="#{clientManager.client.cin }" required="true" placeholder="CIN"/>
+		<b:label text="Adresse  : "/>
+		<b:inputText value="#{clientManager.client.adresse}" required="true" placeholder="adresse"/>
+		<b:commandButton value="Ajouter Client "    action="#{clientManager.addclient }"  look="success"/>
+		</b:row>	
+		</b:well>
+		</b:form>
+		</b:panel>
+	</div>
+	<div class="col-lg-3"></div>
+	</div>
+	<br/>
+	
+ 
+ 
+ 
+ 
+</h:body> 
+</html>

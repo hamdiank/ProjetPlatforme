@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:b ="http://bootsfaces.net/ui"
+	 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	>
+
+<h:head></h:head> 
+<h:body>
+<b:navBar brand="OurProject" brandHref="http://localhost:8080/ProjetPlatforme/Welcome">
+    <b:navbarLinks>
+        <b:navLink active="true" value="Gestion Client" href="GestionClient.xhtml"></b:navLink>
+        <b:navLink value="Gestion Categorie" href="GestionCategorie.xhtml"></b:navLink>
+    	<b:navLink value="Gestion Produit" href="GestionProduit.xhtml"></b:navLink>
+    </b:navbarLinks>
+</b:navBar>
+
+
+
+<b:column span="3">
+     <b:panel look="primary" title="Gestion Client" collapsible="false">
+         <b:listLinks>
+             <b:navLink href="AddClient.xhtml" value="Ajouter Client"
+                        icon="plus" iconAlign="right"/>
+             <b:navLink></b:navLink>
+             <b:navLink href="ListClient.xhtml" value="List CLient" icon="link"></b:navLink>
+             <b:navLink></b:navLink>
+         </b:listLinks>
+      </b:panel>
+ </b:column>
+  <div class="row">
+	<div class="col-lg-2"></div>
+	<div class="col-lg-8">
+	<b:panel title="Liste Des Clients : "  look="primary" collapsible="false">
+	
+	<b:dataTable value="#{clientManager.listclient}" var="cat"  >
+	<b:dataTableColumn label="CIN" value="#{cat.cin}"/>
+	<b:dataTableColumn label="Nom Client" value="#{cat.nom_client}"/>
+	<b:dataTableColumn label="Prenom client" value="#{cat.prenom_client}"/>
+	<b:dataTableColumn label="Adresse" value="#{cat.adresse}"/>
+	<b:dataTableColumn label="Supprimer"  >
+	</b:dataTableColumn>
+	</b:dataTable>
+	
+	</b:panel>
+	</div>
+	</div>
+	
+	<div class="col-lg-2"></div>
+    
+ 
+</h:body> 
+</html>

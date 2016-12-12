@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:b ="http://bootsfaces.net/ui"
+	 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+<h:head>
+
+</h:head>
+<h:body>
+<b:navBar brand="OurProject" brandHref="http://localhost:8080/ProjetPlatforme/Welcome">
+    <b:navbarLinks>
+        <b:navLink value="Gestion Client" href="GestionClient.xhtml"></b:navLink>
+        <b:navLink value="Gestion Categorie" href="GestionCategorie.xhtml"></b:navLink>
+    	<b:navLink active="true" value="Gestion Produit" href="GestionProduit.xhtml"></b:navLink>
+    </b:navbarLinks>
+</b:navBar>
+
+<b:column span="3">
+     <b:panel look="primary" title="Gestion Produit" collapsible="false">
+         <b:listLinks>
+             <b:navLink active="true" href="AddProduit.xhtml" value="Ajouter Produit"
+                        icon="plus" iconAlign="right"/>
+             <b:navLink></b:navLink>
+             <b:navLink href="ListProduit.xhtml" value="List Produit" icon="link"></b:navLink>
+             <b:navLink></b:navLink>
+         </b:listLinks>
+      </b:panel>
+ </b:column>
+
+<div class="row">
+<div class="col-lg-2"></div>
+	<div class="col-lg-8">
+	<b:panel title="Ajouter une Produit " look="primary" collapsible="false">
+		<b:form >
+		<b:well>
+		<b:row>
+		<b:label text="Categorie Du Produit : "/>
+		<b:selectOneMenu value="#{produitManager.produit.categorie }" >
+		<f:selectItems value="#{produitManager.categoriemanager.listcategorie}" var="c" itemValue="#{c}" itemLabel="#{c.nom}"/>
+		</b:selectOneMenu>
+		<b:label text="Nom Du Produit : "/>
+		<b:inputText value="#{produitManager.produit.nom }" required="true" placeholder="nom du produit"/>
+		<b:label text="Description  : "/>
+		<b:inputText value="#{produitManager.produit.description}" required="true" placeholder="Description du produit"/>
+		<b:label text="Prix Du Produit : "/>
+		<b:inputText value="#{produitManager.produit.prix }" required="true" placeholder="prix du produit"/>
+		<b:label text="Qauntite en Stock : "/>
+		<b:inputText value="#{produitManager.produit.quantiteStock }" required="true" placeholder="quantite en stock "/>
+		<b:commandButton value="Ajouter Produit "    action="#{produitManager.addProduit}"  look="success"/>
+		</b:row>	
+		</b:well>
+		</b:form>
+		</b:panel>
+	</div>
+	<div class="col-lg-3"></div>
+	</div>
+	
+	<br/>
+	
+
+ 
+ 
+</h:body> 
+</html>
